@@ -15,7 +15,9 @@ def index(request):
 def detail(request, pk):
     article = Article.objects.get(pk=pk)
     comment_form = CommentForm()
-    comments = article.comment_set.all()
+    # comments = article.comment_set.all()
+    comments = article.comment_set.filter(user_id=1).count()
+    print(comments)
     context = {
         'article': article,
         'comment_form': comment_form,

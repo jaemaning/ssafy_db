@@ -7,7 +7,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import update_session_auth_hash
 from django.views.decorators.http import require_POST, require_safe, require_http_methods
 from .forms import CustomUserCreationForm, CustomUserChangeForm
-
+from django.contrib.auth import get_user_model
 
 # Create your views here.
 def login(request):
